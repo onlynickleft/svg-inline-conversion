@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert SVG to Inline</title>
+    <style>
+        #container {
+            width: 100%;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 20%);
+            gap: 0px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        img,
+        svg {
+            display: block;
+            height: 130px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul>
+            <li><div data-svg-src="assets/adzooma.svg" alt="adzooma.svg logo"></div></li>
+            <li><div data-svg-src="assets/animaker.svg" alt="animaker.svg logo"></div></li>
+            <li><div data-svg-src="assets/bambee.svg" alt="bambee.svg logo"></div></li>
+            <li><div data-svg-src="assets/breezy.svg" alt="breezy.svg logo"></div></li>
+            <li><div data-svg-src="assets/busybusy.svg" alt="busybusy.svg logo"></div></li>
+            <li><div data-svg-src="assets/cleverly.svg" alt="cleverly.svg logo"></div></li>
+            <li><div data-svg-src="assets/crowdfire.svg" alt="crowdfire.svg logo"></div></li>
+            <li><div data-svg-src="assets/dell.svg" alt="dell.svg logo"></div></li>
+            <li><div data-svg-src="assets/dyson.svg" alt="dyson.svg logo"></div></li>
+            <li><div data-svg-src="assets/eastbay.svg" alt="eastbay.svg logo"></div></li>
+            <li><div data-svg-src="assets/engagebay.svg" alt="engagebay.svg logo"></div></li>
+            <li><div data-svg-src="assets/forms-on-fire.svg" alt="forms-on-fire.svg logo"></div></li>
+            <li><div data-svg-src="assets/gnc.svg" alt="gnc.svg logo"></div></li>
+            <li><div data-svg-src="assets/grammarly.svg" alt="grammarly.svg logo"></div></li>
+            <li><div data-svg-src="assets/iconosquare.svg" alt="iconosquare.svg logo"></div></li>
+            <li><div data-svg-src="assets/justuno.svg" alt="justuno.svg logo"></div></li>
+            <li><div data-svg-src="assets/moosend.svg" alt="moosend.svg logo"></div></li>
+            <li><div data-svg-src="assets/napoleoncat.svg" alt="napoleoncat.svg logo"></div></li>
+            <li><div data-svg-src="assets/new_balance.svg" alt="new_balance.svg logo"></div></li>
+            <li><div data-svg-src="assets/octane-ai.svg" alt="octane-ai.svg logo"></div></li>
+            <li><div data-svg-src="assets/paymo.svg" alt="paymo.svg logo"></div></li>
+            <li><div data-svg-src="assets/proof.svg" alt="proof.svg logo"></div></li>
+            <li><div data-svg-src="assets/storychief.svg" alt="storychief.svg logo"></div></li>
+            <li><div data-svg-src="assets/unbounce.svg" alt="unbounce.svg logo"></div></li>
+        </ul>
+    </div>
+</body>
+
+<script src="js/svg-to-inline.js"></script>
+<script>
+    // Process the svg image sources
+    let svgSources = document.querySelectorAll('[data-svg-src]');
+
+    for (let i = 0, j = svgSources.length; i < j; i++)
+    {
+        let svgSource = svgSources[i];
+        
+        SVGToInline.convertSVGtoInline(svgSource);
+    }
+</script>
+
+</html>
